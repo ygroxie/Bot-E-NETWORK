@@ -48,10 +48,8 @@ bot.on('message', message => {
 
     if (command === "kick") {
         let modRole = message.guild.roles.find("name", "Modo");
-        if(message.member.hasPermission("KICK_MEMBER")) {
+        if(!message.member.roles.has(modRole.id)) {
             return message.reply("Tu n'as pas la permission de faire cette commande. Désolé !").catch(console.error);
-            
-                }
         }
         if(message.mentions.users.size === 0) {
             return message.reply("Merci de mentionner l'utilisateur à expulser.").catch(console.error);
@@ -72,10 +70,8 @@ bot.on('message', message => {
 
 if (command === "ban") {
     let modRole = message.guild.roles.find("name", "Modo");
-    if(message.member.hasPermission("BAN_MEMBER")) {
+    if(!message.member.roles.has(modRole.id)) {
         return message.reply("Tu n'as pas la permission de faire cette commande. Désolé !").catch(console.error);
-        
-            }
     }
     const member = message.mentions.members.first();
     if (!member) return message.reply("Merci de mentionner l'utilisateur à bannir.");
