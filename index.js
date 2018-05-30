@@ -47,7 +47,7 @@ bot.on('message', message => {
     command = args.shift().toLowerCase();
 
     if (command === "kick") {
-        let modRole = message.guild.roles.find("name", "Modérateur");
+        let modRole = message.guild.roles.find("name", "Staff IG.");
         if(!message.member.roles.has(modRole.id)) {
             return message.reply("Tu n'as pas la permission de faire cette commande. Désolé !").catch(console.error);
         }
@@ -69,7 +69,7 @@ bot.on('message', message => {
 }
 
 if (command === "ban") {
-    let modRole = message.guild.roles.find("name", "Modérateur");
+    let modRole = message.guild.roles.find("name", "Staff IG.");
     if(!message.member.roles.has(modRole.id)) {
         return message.reply("Tu n'as pas la permission de faire cette commande. Désolé !").catch(console.error);
     }
