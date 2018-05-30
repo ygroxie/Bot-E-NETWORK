@@ -64,7 +64,7 @@ bot.on('message', message => {
             return message.reply("Je n'ai pas la permission KICK_MEMBERS pour faire ceci.").catch(console.error);
         }
         kickMember.kick().then(member => {
-            message.reply(`${member.user.username} a été expulsé avec succès ${message;author.username} !`).catch(console.error);
+            message.reply(`${member.user.username} a été expulsé avec succès ${message.author.username} !`).catch(console.error);
             message.guild.channels.find("name", "réponse-bot").send(`**${member.user.username} a été expulsé du discord par **${message.author.username}**`);
         }).catch(console.error)
         
