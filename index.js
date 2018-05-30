@@ -24,7 +24,7 @@ bot.on('guildMemberAdd', member => {
     var bvn_embed = new Discord.RichEmbed()
     .setColor('#E81414')
     .setImage(member.user.displayAvatarURL)
-    .addField("Bienvenue", `Bienvenue ${member.user.username} sur E-NETWORK nous somme actuellement ${member.guild.memberCount} membres`)
+    .addField("Bienvenue", `Bienvenue ${member} sur E-NETWORK nous somme actuellement ${member.guild.memberCount} membres`)
     .setFooter(`${member.user.username}`)
     .setTimestamp()
     member.guild.channels.find("name", "✔-discussion").send(bvn_embed)
@@ -62,7 +62,7 @@ bot.on('message', message => {
             return message.reply("Je n'ai pas la permission KICK_MEMBERS pour faire ceci.").catch(console.error);
         }
         kickMember.kick().then(member => {
-            message.guild.channels.find("name", "réponse-bot").send(`${message.author.mentions}, ${member.user.username} a été expulsé avec succès !`).catch(console.error);
+            message.reply(`${member.user} a été expulsé avec succès !`).catch(console.error);
             message.guild.channels.find("name", "✔-discussion").send(`**${member.user.username} a été expulsé du discord par **${message.author.username}**`);
         }).catch(console.error)
         
@@ -76,7 +76,7 @@ if (command === "ban") {
     const member = message.mentions.members.first();
     if (!member) return message.reply("Merci de mentionner l'utilisateur à bannir.");
     member.ban().then(member => {
-        message.reply(`${member.user.username} a été banni avec succès ${message.author.username} !`).catch(console.error);
+        message.reply(`${member.user} a été banni avec succès ${message.author.username} !`).catch(console.error);
         message.guild.channels.find("name", "✔-discussion").send(`**${member.user.username}** a été banni du discord par **${message.author.username}**`);
     }).catch(console.error)
 }})
