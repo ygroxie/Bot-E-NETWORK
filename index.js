@@ -62,8 +62,8 @@ bot.on('message', message => {
             return message.reply("Je n'ai pas la permission KICK_MEMBERS pour faire ceci.").catch(console.error);
         }
         kickMember.kick().then(member => {
-            message.reply(`${member.user.username} a été expulsé avec succès ${message.author.username} !`).catch(console.error);
-            message.guild.channels.find("name", "réponse-bot").send(`**${member.user.username} a été expulsé du discord par **${message.author.username}**`);
+            message.reply.guild.channels.find("name", "réponse-bot").send(`${member.user.username} a été expulsé avec succès ${message.author.username} !`).catch(console.error);
+            message.guild.channels.find("name", "✔-discussion").send(`**${member.user.username} a été expulsé du discord par **${message.author.username}**`);
         }).catch(console.error)
         
 }
@@ -77,7 +77,7 @@ if (command === "ban") {
     if (!member) return message.reply("Merci de mentionner l'utilisateur à bannir.");
     member.ban().then(member => {
         message.reply(`${member.user.username} a été banni avec succès ${message.author.username} !`).catch(console.error);
-        message.guild.channels.find("name", "réponse-bot").send(`**${member.user.username}** a été banni du discord par **${message.author.username}**`);
+        message.guild.channels.find("name", "✔-discussion").send(`**${member.user.username}** a été banni du discord par **${message.author.username}**`);
     }).catch(console.error)
 }})
 
