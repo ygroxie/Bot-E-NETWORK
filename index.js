@@ -36,6 +36,7 @@ bot.on('message',(message)=>{
     .addField("?help","affiche les commandes du bot.")
     .addField("?kick","Permet de kick un joueur du serveur Discord.")
     .addField("?ban", "Permet de bannir un Joueur du serveur Discord.")
+    .addField("?ping", "Joue au Ping-Pong avec le bot !")
     .setColor("D7F705")
     .setTitle("Guide Commandes !")
     .setFooter ("(Utile si tu as courtes mémoire ! x) ")
