@@ -34,12 +34,12 @@ bot.on('message',(message)=>{
     if(message.content == "?help") {
     var embed = new Discord.RichEmbed()
     .addField("?help","affiche les commandes du bot.")
-    .setFooter ("(Utile si tu as courtes mémoire ! x) ")
     .addField("?kick","Permet de kick un joueur du serveur Discord.")
     .addField("?ban", "Permet de bannir un Joueur du serveur Discord.")
     .addField("?ping", "Joue au Ping-Pong avec le bot !")
     .setColor("D7F705")
     .setTitle("Guide Commandes !")
+    .setFooter ("(Utile si tu as courtes mémoire ! x) ")
     message.channel.send(embed)
     }
     })
