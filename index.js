@@ -40,7 +40,6 @@ bot.on('message',(message)=>{
     .addField("?ping", "Joue au Ping-Pong avec le bot !")
     .setColor("D7F705")
     .setTitle("Guide Commandes !")
-    .setFooter ("(Utile si tu as courtes mémoire ! x) ")
     message.channel.send(embed)
     }
     })
