@@ -50,7 +50,7 @@ bot.on('message', message => {
     command = args.shift().toLowerCase();
 
     if (command === "kick") {
-        if(!message.channel.permissionFor(message.member).hasPermission("KICK_MEMBERS")) {
+        if(!message.channel.permissionsFor(message.member).hasPermission("KICK_MEMBERS")) {
             return message.reply("Tu n'as pas la permission de faire cette commande. Désolé !").catch(console.error);
         }
         if(message.mentions.users.size === 0) {
@@ -71,7 +71,7 @@ bot.on('message', message => {
 }
 
 if (command === "ban") {
-    if (!message.channel.permissionFor(message.member).hasPermission("BAN_MEMBERS")) {
+    if (!message.channel.permissionsFor(message.member).hasPermission("BAN_MEMBERS")) {
         return message.reply("Tu n'as pas la permission de faire cette commande. Désolé !").catch(console.error);
     }
     const member = message.mentions.members.first();
