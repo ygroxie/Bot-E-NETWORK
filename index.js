@@ -27,7 +27,7 @@ bot.on('guildMemberAdd', member => {
     .addField("Bienvenue", `Bienvenue ${member} sur E-NETWORK nous somme actuellement ${member.guild.memberCount} membres`)
     .setFooter(`${member.user.username}`)
     .setTimestamp()
-    member.guild.channels.find("name", "✔-discussion").send(bvn_embed)
+    member.guild.channels.find("name", "📰discussion📰").send(bvn_embed)
 })
 
 bot.on('message',(message)=>{
@@ -66,7 +66,7 @@ bot.on('message', message => {
         }
         kickMember.kick().then(member => {
             message.reply(`${member.user} a été expulsé avec succès !`).catch(console.error);
-            message.guild.channels.find("name", "✔-discussion").send(`**${member.user.username} a été expulsé du discord par **${message.author.username}**`);
+            message.guild.channels.find("name", "📰discussion📰").send(`**${member.user.username} a été expulsé du discord par **${message.author.username}**`);
         }).catch(console.error)
         
 }
@@ -80,7 +80,7 @@ if (command === "ban") {
     if (!member) return message.reply("Merci de mentionner l'utilisateur à bannir.");
     member.ban().then(member => {
         message.reply(`${member.user} a été banni avec succès !`).catch(console.error);
-        message.guild.channels.find("name", "✔-discussion").send(`**${member.user.username}** a été banni du discord par **${message.author.username}**`);
+        message.guild.channels.find("name", "📰discussion📰").send(`**${member.user.username}** a été banni du discord par **${message.author.username}**`);
     }).catch(console.error)
 }})
 
